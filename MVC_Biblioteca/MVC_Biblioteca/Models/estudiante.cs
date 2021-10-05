@@ -29,9 +29,9 @@ namespace MVC_Biblioteca.Models
 
         public string sexo { get; set; }
        
-        [DisplayFormat(DataFormatString = "dd/MM/yyyy")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
 
-        public DateTime fechaNac { get; set; }
+        public System.DateTime fechaNac { get; set; }
 
 
 

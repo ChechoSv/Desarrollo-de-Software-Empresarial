@@ -11,12 +11,12 @@ namespace MVC_Biblioteca.Models
         [Key]
         public int id { get; set; }
 
-        [DisplayFormat(DataFormatString = "dd/MM/yyyy")]
-
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DataType(DataType.Date)]
         public DateTime fechaPrestamo { get; set; }
-        
-        [DisplayFormat(DataFormatString = "dd/MM/yyyy")]
 
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DataType(DataType.Date)]
         public DateTime fechaDevolucion { get; set; }
 
 

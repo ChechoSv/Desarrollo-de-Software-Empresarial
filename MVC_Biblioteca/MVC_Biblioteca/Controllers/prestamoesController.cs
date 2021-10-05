@@ -17,7 +17,9 @@ namespace MVC_Biblioteca.Controllers
         // GET: prestamoes
         public ActionResult Index()
         {
+         
             return View(db.prestamo.ToList());
+
         }
 
         // GET: prestamoes/Details/5
@@ -38,7 +40,17 @@ namespace MVC_Biblioteca.Controllers
         // GET: prestamoes/Create
         public ActionResult Create()
         {
+            DropDownListStudents();
             return View();
+        }
+
+        private void DropDownListStudents(object selectedStudent = null)
+        {
+            var departmentsQuery = from d in db.estudiante
+                                   orderby d.nombre
+                                   
+                                   select d;
+            ViewBag.StudentID = new SelectList(departmentsQuery, "id", "nombre", selectedStudent);
         }
 
         // POST: prestamoes/Create
